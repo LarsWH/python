@@ -1,3 +1,12 @@
+# CMD
+    cmd
+    d:
+    cd d:\Users\lars\software\python_projects\
+    python --version
+WTF???:
+    cd d:\Users\lars\software\python_projects\python
+    python --version
+
 # WSL
     wsl
     cd /mnt/d/Users/lars/software/python_projects/python
