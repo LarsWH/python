@@ -1,0 +1,9 @@
+version: '3'
+services:
+  hello-python:
+    build: .
+    image: python_image
+    container_name: sletmig
+    restart: no
+    volumes:
+      - $PWD:/mycode
