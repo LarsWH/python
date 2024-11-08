@@ -47,8 +47,19 @@ WTF???:
     docker-compose build
     docker-compose up -d
     docker exec sletmig /bin/bash -c "python --version"
-    docker exec sletmig /bin/bash -c "cd /mycode && python python.py"
-    docker exec sletmig /bin/bash -c "cd /mycode && python test_python.py"
-    docker exec sletmig /bin/bash -c "cd /mycode && pytest /mycode/pytest_python.py
+    docker exec sletmig /bin/bash -c "cd /mycode && python src/python.py"
+    docker exec sletmig /bin/bash -c "cd /mycode && python test/test_python.py"
+    docker exec sletmig /bin/bash -c "cd /mycode && pytest test/pytest_python.py"
+    docker exec sletmig /bin/bash -c "cd /mycode && pytest test/pytest_parameters.py"
     docker-compose down
 
+Starting a shell session, enables colour coding of the output:
+
+    docker exec -it sletmig /bin/bash
+        cd /mycode/test/
+        pytest -v pytest_python.py
+        pytest -v pytest_parameters.py
+
+
+# References
+https://www.lambdatest.com/learning-hub/pytest-tutorial
