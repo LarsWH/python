@@ -1,3 +1,24 @@
+# Preparations
+
+## Interpreter
+- Ctlr + Alt + s
+- 'Python interpreter'
+- Ensure that it is set correctly (= not using something cached from another project)
+
+## Pytest
+- Check the run configuration. If it writes: "Warning: No pytest runner found in the selected interpreter", do this:
+    - 'import pytest' will be marked red in on of the .py files
+    - Use PyCharms feature to 'install package: pytest' (this probably copies pytest to the .venv folder ???)
+- Check that the run configuration is now OK
+
+Notice: the convention is that test-files always start with 'test_'. Other namings will confuse the test runner (in PyCharm at least)
+
+## Check version (from command prompt)
+
+    which python
+    which pytest
+    which pip
+
 # CMD
     cmd
     d:
@@ -53,12 +74,25 @@ WTF???:
     docker exec sletmig /bin/bash -c "cd /mycode && pytest test/pytest_parameters.py"
     docker-compose down
 
+## Run in shell
 Starting a shell session, enables colour coding of the output:
 
     docker exec -it sletmig /bin/bash
         cd /mycode/test/
         pytest -v pytest_python.py
         pytest -v pytest_parameters.py
+
+## Clean in shell
+
+    docker exec -it sletmig /bin/bash
+        cd /mycode/
+        rm -rf .venv/
+        rm -rf __pycache__/
+        rm -rf src/__pycache__/
+        rm -rf test/__pycache__/
+        rm -rf .pytest_cache/
+        rm -rf test/.pytest_cache/
+
 
 
 # References
